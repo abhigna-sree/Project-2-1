@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+<!-- <header class="header">
+        <a href="#" class="logo">Elite Designs</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="#">Collections</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="all"></div> 
+        <div class="content">
+            <p id="line1">Upload Jewelry Images</p>
+            <p id="line2">Provide a seamless experience for users to upload their jewelry images and view them instantly
+                after uploading.</p>
+             <button id="b">Upload Images</button> 
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Upload Image</button>
+            </form>
+        
+        </div>
+        <div id="image-gallery" class="image-gallery"></div>
+    </div>-->
+    <div class="all">
+        <div class="content">
+            <p id="line1">Upload Jewelry Images</p>
+            <p id="line2">Provide a seamless experience for users to upload their jewelry images and view them instantly after uploading.</p>
+            <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="profileImage" accept="image/*" required>
+                <input type="hidden" name="userId" value="YOUR_USER_ID"> <!-- Add userId dynamically if needed -->
+                <button type="submit">Upload Image</button>
+            </form>
+        </div>
+        <div id="image-gallery" class="image-gallery"></div>
+    </div>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(this);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const gallery = document.getElementById('image-gallery');
+
+                // Create a new image element
+                const img = document.createElement('img');
+                img.src = data.imageUrl; // Set the source to the URL returned from the server
+                img.alt = 'Uploaded Image';
+                img.style.width = '200px'; // Adjust size as needed
+
+                // Append the image to the gallery
+                gallery.appendChild(img);
+            })
+            .catch(error => {
+                console.error('Error uploading image:', error);
+            });
+        });
+    </script>
+</body>
+</html>

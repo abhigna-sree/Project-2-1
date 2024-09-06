@@ -1,0 +1,322 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+}
+body{
+    background-color: #181a1b;
+}
+
+.left {
+    display: flex;
+    border: 0;
+    color: white;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    /* font-family: 'Baloo Bhai', cursive; */
+    /* font-size: large; */
+}
+li{
+    justify-content: center;
+}
+ul{
+    display: flex;
+    /* margin: 2px 30px; */
+}
+.navitems{
+    position: relative;
+    top:5px;
+    font-size: 1.1rem;
+}
+li{
+    list-style: none;
+    margin: 10px 12px;
+}
+a{
+    color: rgb(236, 224, 210);
+    font-size: 16px;
+    text-decoration: none;
+}
+.navitems a{
+    padding: 7px;
+}
+.right{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+.logo{
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(236, 224, 210);
+    text-decoration: none;
+    position: absolute;
+    top: 5px;
+}
+button{
+    width:70px;
+    height: 30px;
+}
+.bl{
+    /* margin: 0px 5px; */
+    background-color: rgb(236, 224, 210);
+    border-radius: 7px;
+    cursor: pointer;
+}
+.bl a{
+    font-size: 0.912rem;
+    font-weight: 600;
+    padding: 5px 2px;
+    color: black;
+}
+.bl:hover, .bl a:hover,
+.bl:hover, .bl a:active {
+    background-color: grey;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+/* slide 0 */
+.container0 {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 663px;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/best_jewellery_photographer_mumbai-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    filter: brightness(0.6);
+}
+
+#matter0 {
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* width: 100%; */
+    height: 95%;
+    /* line-height: 2rem; */
+}
+#l01{
+    position: relative;
+    bottom: 10px;
+    font-weight: 500;
+    font-size:large;
+}
+#l02{
+    width: 90%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 3.2rem;
+}
+#l03{
+    font-weight: 500;
+    font-size: large;
+    position: relative;
+    top: 1rem;
+}
+#btn0{
+    width: 20%;
+    height: 10%;
+    position: relative;
+    top: 2.7rem;
+    border-radius: 4rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* slide 1 */
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Ensures the container takes the full width of the screen */
+    max-width: 100%; 
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between; 
+    height: 645px;
+}
+
+.c1 {
+    color: white;
+    position: relative;
+    flex: 1; /* Ensures each child div takes up equal space */
+    padding: 10px;
+}
+
+.c1 button {
+    font-weight: 500;
+    font-size: 19px;
+    position: relative;
+    padding: 2px;
+    top: 15px;
+    width: 145px;
+    height: 58px;
+    border-radius: 40px;
+    color: black;
+    cursor: pointer;
+    /* opacity: ; */
+}
+.c1 button:hover{
+    color: white;
+    background-color: rgb(70, 70, 70);
+}
+#matter1 {
+    left: 60px;
+}
+
+#matter1 h3 {
+    font-size: 45px;
+    position: relative;
+    bottom: 60px;
+}
+
+#matter1 p {
+    font-size: 18px;
+    position: relative;
+    bottom: 33px;
+}
+
+#image11 img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    left: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .container1 {
+        flex-direction: column; /* Stacks the items vertically */
+        height: auto; /* Adjusts the height to content */
+    }
+
+    .c1 {
+        flex: none; /* Removes the flex property to allow full width */
+        width: 100%; /* Makes each child div take up full width */
+        text-align: center; /* Centers content */
+    }
+
+    #matter1 {
+        left: 0;
+    }
+
+    .c1 button {
+        left: 0;
+        top: 20px;
+        position: relative;
+    }
+
+    #matter1 h3 {
+        font-size: 35px;
+        bottom: 0;
+    }
+
+    #matter1 p {
+        font-size: 16px;
+        bottom: 0;
+    }
+
+    #image11 img {
+        max-width: 90%; /* Adjusts image size to fit within the screen */
+        margin: 0 auto; /* Centers the image */
+    }
+}
+
+/* slide 2 */
+.container2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 630px;
+    color: white;
+}
+.item2{
+    width: 33%;
+}
+.container2 img{
+    width: 33.5%;
+    height: auto;
+}
+.middle{
+    background: url('img/im3.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden
+}
+#c2l1{
+    font-size: 23px;
+    position: relative;
+    bottom: 120px;
+}
+#c2l2{
+    font-size: 20px;
+    position: relative;
+    bottom: 113px;
+}
+#c2l3{
+    position: relative;
+    font-size: 40px;
+    bottom: 30px;
+    font-weight: 600;
+}
+#c2l4{
+    position: relative;
+    font-size: 18px;
+}
+/* slide 3 */
+.top3{
+    display: flex;
+    width: 100%;
+    height: 90px;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 30px;
+}
+.container3{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.box3{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+.img3{
+    object-fit: contain;
+    display: block;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div style="background-image: url(img/women.jpg); height: 750px; width: 1550px;">
+    <header class="header">
+        <a href="#" class="logo">Elite Designs</a>
+        <nav class="nav">
+            <a href="elite.html">Home</a>
+            <a href="#">Collections</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Login</h1>
+        <!-- Form Action -->
+        <form id="login-form" action="/login" method="POST">
+            <div class="details">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="details">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="fp"><a href="#">Forgot password?</a></div>
+            <button type="submit" class="btn">Login</button>
+            <div class="s"><p>Don't have an account? <a href="signup.html" style="text-decoration: underline;">Sign Up</a></p></div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
