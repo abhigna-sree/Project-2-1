@@ -4,22 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="css/upload.css">
+    <title>contact</title>
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body>
     <header>
-        <nav id="nav" class="nav hidden">
+        <nav id="nav" class="nav">
             <div class="logo" id="logo">Elite Designs</div>
             <div class="navitems" id="navitems">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="explore.html">Explore</a></li>
-                    <!-- <li><a href="#">Collections</a></li> -->
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <button onclick="location.href='/upload.html'" class="uploadbtn active">Get Started</button>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <button onclick="location.href='/upload.html'" class="uploadbtn">Get Started</button>
                 </ul>
             </div>
             <div class="dropdown">
@@ -32,18 +30,20 @@
             <div class="hamburger" id="hamburger">&#9776;</div>
         </nav>
     </header>
-
-    <div class="content">
-        <h1 id="line1">Upload Jewelry Images</h1>
-        <p id="line2">Provide a seamless experience for users to upload their jewelry images and view them instantly
-            after uploading.</p>
-        <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
-            <input class="choose" type="file" name="profileImage" accept="image/*" required>
-            <button id="submitbtn" type="submit">Upload Image</button>
+    <div class="container">
+        <form id="contact-form" action="/contact" method="post" class="feedback">
+            <h2>Contact Us</h2>
+            <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="text" name="mobile" id="mobile" placeholder="Mobile">
+            <h4>Share Your Thoughts</h4>
+            <textarea name="concern" id="concern" required></textarea>
+            <input type="submit" value="Send" id="button">
         </form>
-        <div id="image-gallery" class="image-gallery"></div>
     </div>
     <script>
+
         window.addEventListener('DOMContentLoaded', async () => {
             try {
                 const response = await fetch('/user-details', {
@@ -62,6 +62,7 @@
                 window.location.href = '/login.html';
             }
         });
+
         const hamburger = document.getElementById('hamburger');
         const navitems = document.getElementById('navitems');
 
@@ -69,29 +70,30 @@
             navitems.querySelector('ul').classList.toggle('show');
         });
 
-        document.getElementById('upload-form').addEventListener('submit', function (event) {
+        document.getElementById('contact-form').addEventListener('submit', async function (event) {
             event.preventDefault();
 
+            // Collect form data
             const formData = new FormData(this);
 
-            fetch('/upload', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    const gallery = document.getElementById('image-gallery');
-                    const img = document.createElement('img');
-                    img.src = data.imageUrl;
-                    img.alt = 'Uploaded Image';
-                    img.classList.add('gallery-image');
-                    img.classList.add('animate__animated');
-                    img.classList.add('animate__zoomInDown');
-                    gallery.appendChild(img);
-                })
-                .catch(error => {
-                    console.error('Error uploading image:', error);
+            try {
+                const response = await fetch('/contact', {
+                    method: 'POST',
+                    body: formData
                 });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(result.message);
+                    this.reset();
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the form.');
+            }
         });
         document.getElementById("logout-link").addEventListener("click", async () => {
             try {
@@ -102,6 +104,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>

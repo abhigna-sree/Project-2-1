@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-button{
-    cursor: pointer;
-}
-body {
+* {
+    font-family: "Montserrat", sans-serif;
     margin: 0;
+    text-align: center;
     padding: 0;
-    font-family: serif;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    background-color: black;
+    color: white !important;
+}
+
+body {
+    background-color: #181a1b;
     color: white;
+}
+
+button {
+    cursor: pointer;
+    color: black !important;
 }
 
 .nav {
@@ -22,8 +24,8 @@ body {
     width: 100%;
     position: fixed;
     z-index: 100;
-    box-shadow: 0 0 15px 10px #011821;
-    background-color: rgb(5, 28, 38);
+    box-shadow: 0 0 15px 10px #000000;
+    background-color: black;
 }
 
 .logo {
@@ -54,9 +56,9 @@ nav ul li a {
     text-decoration: none;
 }
 
-a.active,
+.active,
 a:hover {
-    color: antiquewhite;
+    color: rgb(127, 127, 127);
     transition: .5s;
     transition: ease-out .5s;
 }
@@ -96,7 +98,7 @@ a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #021f0a;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -162,60 +164,113 @@ a:hover {
     }
 }
 
-/* slide */
-.content {
-    position: relative;
+.container {
+    height: 100vh;
+    background: black;
     display: flex;
-    top:50px;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    min-height: 95vh;
+    align-items: center;
+    background: url('../img/contactbg.jpg');
 }
 
-.content::before {
-    content: '';
-    background: url('../img/Sakina_Z_IMG12157_FIV.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    filter: brightness(0.5);
-    z-index: -1;
-}
-
-.gallery-image {
-    width: 30vw;
-    height: auto;
-    margin: 20px;
+.container form {
+    width: 670px;
+    height: 400px;
     display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     flex-wrap: wrap;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 670;
-    margin: 20px 0px;
+.container form input {
+    width: 290px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #fff;
 }
 
-p {
-    font-weight: 600
+.container form input::placeholder {
+    color: #ddd;
 }
 
-input {
-    font-size: 2.2vh;
-    font-weight: 500;
-    margin: 10px;
-    height: 4vh;
+.container form #lastname,
+.container form #mobile {
+    margin-left: 20px;
 }
 
-#submitbtn {
-    font-size: 2.2vh;
-    height: 4vh;
-    font-weight: 500;
+h2 {
+    color: #fff;
+    font-size: 3vh;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+h4 {
+    color: #fff;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.container form textarea {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    min-height: 60px;
+}
+
+.container form #button {
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333 !important;
+    width: 100px;
+    padding: 0;
+    margin-right: 500px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.container form #button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media (max-width:650px) {
+    .container form {
+        width: 70vw;
+        height: 600px;
+    }
+
+    .container form textarea {
+        min-width: 60vw;
+    }
+
+    .container form #lastname,
+    .container form #mobile {
+        margin-left: 0;
+    }
+    .container form #button{
+        margin-right: 0vw;
+    }
 }

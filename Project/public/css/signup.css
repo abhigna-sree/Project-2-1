@@ -2,54 +2,33 @@ body {
     margin: 0;
     font-family: serif;
     font-family: "Montserrat", sans-serif;
+    background: url('../img/women.jpg');
     overflow: hidden;
 }
 
-.header {
+.nav{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.1);
-    /* Translucent background */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    background-color: #000000;
-    border-bottom: 1px solid #000000;
-    height: 13px;
-    /* position: fixed; */
+    background-color: black;
+    box-shadow: 0 0 15px 7px #090505;
+    color: bisque;
     width: 100%;
+    height: 50px;
 }
-
-.logo {
+.logo{
+    font-family: "Montserrat", sans-serif;
     font-size: 25px;
-    font-weight: bold;
-    color: rgb(236, 224, 210);
-    text-decoration: none;
-    display: inline-block;
+    font-weight: 750;
+    margin: 0px 12px;
 }
-
-.nav {
-    display: flex;
-    gap: 20px;
+.navitems{
+    display:flex;
     position: absolute;
-    display: inline-block;
-    right: 34px;
+    right: 0;
+    /* font-family: font; */
+    font-size: 12px;
+    margin: 0px 32px;
 }
-
-.nav a {
-    display: inline-block;
-    text-decoration: none;
-    color: rgb(236, 224, 210);
-    font-size: 16px;
-    padding: 16px;
-}
-
-.nav a:hover,
-.nav a.active {
-    text-decoration: underline;
-    color: grey;
-}
-
 .container {
     border: 2px solid white;
     margin: 180px 160px;

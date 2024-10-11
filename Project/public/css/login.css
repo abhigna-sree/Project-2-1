@@ -1,80 +1,42 @@
+.josefin-slab-font {
+    font-family: "Josefin Slab", serif;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     font-family: serif;
     font-family: "Montserrat", sans-serif;
+    background: url('../img/women.jpg');
     overflow: hidden;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.1);
-    /* Translucent background */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    background-color: #000000;
-    border-bottom: 1px solid #000000;
-    height: 13px;
-    /* position: fixed; */
-    width: 100%;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: rgb(236, 224, 210);
-    text-decoration: none;
-    display: inline-block;
 }
 
 .nav {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    background-color: black;
+    box-shadow: 0 0 15px 7px #090505;
+    color: bisque;
+    width: 100%;
+    height: 50px;
+}
+
+.logo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    font-weight: 750;
+    margin: 0px 12px;
+}
+
+.navitems {
+    display: flex;
     position: absolute;
-    display: inline-block;
-    right: 34px;
+    right: 0;
+    font-size: 12px;
+    margin: 0px 32px;
 }
 
-.nav a {
-    display: inline-block;
-    text-decoration: none;
-    color: rgb(236, 224, 210);
-    font-size: 16px;
-    padding: 16px;
-}
-
-.nav a:hover,
-.nav a.active {
-    text-decoration: underline;
-    color: grey;
-}
-
-.nav button {
-    display: inline-block;
-    margin: 0px 9px;
-    background-color: rgb(236, 224, 210);
-    border-radius: 7px;
-    cursor: pointer;
-
-}
-
-.nav button:hover {
-    /* background-color: rgb(247, 219, 186); */
-    opacity: 0.8;
-}
-
-.nav button a {
-    font-size: 14px;
-    padding: 5px 12px;
-    color: black;
-}
-
-.nav button a:hover,
-.nav button a:active {
-    color: rgb(51, 50, 50);
-    text-decoration: none;
-}
+/* matter */
 
 .container {
     border: 2px solid white;
@@ -97,6 +59,7 @@ body {
     font-size: 15px;
     border-radius: 8px;
 }
+
 .container h1 {
     font-family: "Montserrat", sans-serif;
     margin-top: 0px;
@@ -118,28 +81,34 @@ body {
     text-decoration: none;
     box-shadow: 7rem;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: antiquewhite;
 }
-.fp a{
+
+.fp a {
     padding: 12px;
     font-family: "Montserrat", sans-serif;
     margin: 11px auto;
     margin-left: 67px;
-    /* margin-left: 10px; */
     font-size: 14px;
     color: beige;
     text-decoration: none;
 }
+
+a:hover {
+    color: white;
+}
+
 .s {
     font-family: "Montserrat", sans-serif;
     color: antiquewhite;
-    /* padding: 84px; */
     margin: 11px auto;
     font-size: 14px;
     margin-left: 40px;
 }
-.s a{
+
+.s a {
     font-size: 14px;
     color: beige;
 }
